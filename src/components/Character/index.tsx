@@ -47,7 +47,7 @@ export const Character = () => {
             setBounds({ left, right });
 
             setDefaultPosition({
-                x: value ? left + ((right - left) * value) : (boxWidth / 2) - (width / 2),
+                x: value !== undefined ? -(-left * value) : (boxWidth / 2) - (width / 2),
                 y: 0,
             });
         }
