@@ -40,8 +40,8 @@ export const Character = () => {
             const { height: boxHeight, width: boxWidth } = ref.current.getBoundingClientRect();
 
             const width = image.width / (image.height / boxHeight);
-            const left  = -width;
-            const right = boxWidth;
+            const left  = -(width - boxWidth);
+            const right = 0;
 
             setWidth(width);
             setBounds({ left, right });
@@ -57,10 +57,10 @@ export const Character = () => {
         if (bounds) {
             const { left, right } = bounds;
 
-            if (left && right) {
+            if (left != undefined && right != undefined) {
                 const diff = (data.x - left) / (right - left);
 
-                onChange(diff);
+                onChange(1 - diff);
             }
         }
     }

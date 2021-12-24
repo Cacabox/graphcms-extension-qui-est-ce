@@ -56,7 +56,7 @@ export default function(): Configuration {
             },
             allowedHosts : "all",
             compress     : false,
-            port         : 5000,
+            port         : 3000,
         }
     }
 };
